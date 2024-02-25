@@ -8,4 +8,4 @@ DATASET=$1
 
 echo $DATASET
 
-parallel --progress --tmpdir="/mnt/tank3/tmp" "$PYTHON $SCRIPT_DIR/map_unique_lengths.py --dataset=$DATASET --in_file {}" ::: "$@" | $PYTHON $SCRIPT_DIR/reduce_count.py
+parallel --progress --tmpdir="." "$PYTHON $SCRIPT_DIR/map_unique_lengths.py --dataset=$DATASET --in_file {}" ::: "$@" | $PYTHON $SCRIPT_DIR/reduce_count.py
